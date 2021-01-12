@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="73" viewBox="0 0 60 73">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        font-size: 12.734px;
+        mix-blend-mode: overlay;
+<!--        filter: url(#filter);-->
+        fill: #f8ff13;
+        font-family: DrukTextWideCyr-HeavyItalic, DrukTextWideCyr;
+        text-transform: uppercase;
+      }
+    </style>
+    <filter id="filter" x="38" y="262" width="59" height="72" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-opacity="0.22"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="translate(2.383 72.774) scale(7.627 7.623)" style="fill: #f8ff13; filter: url(#filter)">
+    <text id="ЛАЙКИ_copy_2" data-name="ЛАЙКИ copy 2" class="cls-1" style="stroke: inherit; filter: none; fill: inherit">Л</text>
+  </g>
+  <use transform="translate(2.383 72.774) scale(7.627 7.623)" xlink:href="#ЛАЙКИ_copy_2" style="stroke: #fff; filter: none; fill: none"/>
+</svg>

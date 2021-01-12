@@ -1,0 +1,1 @@
+"use strict";let elem=document.querySelector(".knight");document.addEventListener("mousemove",e=>{let t=elem.getAttribute("data"),n=(window.innerWidth-e.pageX*t)/100;elem.style.transform=`translateX(${n}px)`,console.log(t)});

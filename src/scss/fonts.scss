@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Neue Machina Regular';
+  src: local('Neue Machina Regular'), local('Neue-Machina-Regular'),
+  url('../fonts/NeueMachina-Regular.woff2') format('woff2'),
+  url('../fonts/NeueMachina-Regular.woff') format('woff'),
+  url('../fonts/NeueMachina-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Druk Cyr Heavy Italic';
+  src: url('../fonts/Druk/DrukTextWideCyrHeavyItalic.otf');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Neue Machina Ultra bold';
+  src: local('Neue Machina Ultra bold'), local('Neue-Machina-Ultra-bold'),
+  url('../fonts/NeueMachina-Ultrabold.woff2') format('woff2'),
+  url('../fonts/NeueMachina-Ultrabold.woff') format('woff'),
+  url('../fonts/NeueMachina-Ultrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+

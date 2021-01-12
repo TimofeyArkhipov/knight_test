@@ -1,0 +1,447 @@
+@import "fonts";
+
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  a{
+    text-decoration: none;
+  }
+}
+@mixin main-text{
+  font-family: "Druk Cyr Heavy Italic", sans-serif;
+  font-style: italic;
+  font-size: 48px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+
+
+@mixin gradient{
+  background: linear-gradient(rgb(0,0,0) 0%, rgba(0,0,0,0.79) 21%, rgba(0,0,0,0) 100%);
+  position: absolute;
+}
+
+
+
+body{
+  height: 90vh;
+  box-sizing: border-box;
+  background: url("../img/bg_c.png") right bottom no-repeat fixed, url("../img/bg_.png")  center center no-repeat fixed;
+  background-size: auto, cover;
+  overflow: hidden;
+  &:before{
+  content: '';
+    @include gradient;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 300px;
+  }
+  &:after{
+    content: '';
+    @include gradient;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 300px;
+    transform: rotate(180deg);
+  }
+}
+
+
+
+
+.Rectangle_ {
+  background-image: -moz-linear-gradient( -90deg, rgb(0,0,0) 0%, rgba(0,0,0,0.79) 21%, rgba(0,0,0,0) 100%);
+  background-image: -webkit-linear-gradient( -90deg, rgb(0,0,0) 0%, rgba(0,0,0,0.79) 21%, rgba(0,0,0,0) 100%);
+  background-image: -ms-linear-gradient( -90deg, rgb(0,0,0) 0%, rgba(0,0,0,0.79) 21%, rgba(0,0,0,0) 100%);
+  opacity: 0.8;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1440px;
+  height: 301px;
+  z-index: 6;
+}
+
+
+
+
+.wrapper{
+
+  //position: relative;
+  max-width: 100%;
+  height: 100%;
+  margin: 32px 47px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-areas: "title  present"
+                        "bonus bonus"
+                         "btn-group best-front"
+                         "money social";
+}
+
+.header-title{
+ grid-area: title;
+  z-index: 20;
+}
+
+.header-present{
+  z-index: 20;
+  grid-area: present;
+  display: flex;
+  //justify-content: end;
+  align-items: flex-end;
+  flex-direction: column;
+  h3{
+    width: 250px;
+     height: 40px;
+     font-size: 18px;
+      font-family: "Neue Machina Ultra bold", sans-serif;
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      line-height: 1.098;
+      z-index: 51;
+  }
+  p{
+    position: relative;
+      font-size: 8px;
+      font-family: "Neue Machina Regular", sans-serif;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      line-height: 0.94;
+      text-align: left;
+      z-index: 53;
+      margin-top: 2px;
+  }
+}
+
+.header-present p:before{
+  content: '';
+  width: 50px;
+  height: 62px;
+  background: url("../img/VectorSmartObject.svg") no-repeat;
+  position: absolute;
+  left: -15%;
+  bottom: 0;
+}
+
+.bonus{
+  z-index: 20;
+  //margin-top: 100px;
+  grid-area: bonus;
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  >p{
+    @include main-text;
+    max-width: 412px;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .like{
+    position: relative;
+    font-family: "Druk Cyr Heavy Italic", sans-serif;
+    font-style: italic;
+    color: #f8ff13;
+    text-transform: uppercase;
+    line-height: 1.2;
+    max-width: 412px;
+    justify-content: center;
+    align-items: center;
+    font-size: 97pt;
+    margin-left: 150px;
+    animation: like 1s cubic-bezier(1,-0.01,.54,1.76);
+    transition-delay: 5s;
+
+    &:after{
+      content: 'ЛАЙКИ';
+      font-size: 95.5pt;
+      -webkit-text-stroke: 1px #fff;
+      color: rgba(0,0,0, 0.2);
+      //color: transparent;
+      position: absolute;
+      left: -3%;
+      top: 0.5%;
+      z-index: -1;
+    }
+    &:before{
+      content: '';
+      background: url("../img/l.svg");
+      position: absolute;
+      left: -36%;
+      width: 149px;
+      height: 74pt;
+      top: 23%;
+    }
+
+  }
+}
+
+
+.btn-group{
+  position: relative;
+  grid-area: btn-group;
+  display: flex;
+  align-self: end;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  z-index: 20;
+  .tap{
+    width: 490px;
+    height: 100px;
+    .btn-tap{
+      //position: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 480px;
+      height: 90px;
+      color: #000;
+      font-family: "Druk Cyr Heavy Italic", sans-serif;
+      text-transform: uppercase;
+      font-size: 23.36pt;
+      transform: skewX(-10deg);
+      background-color: #f8ff13;
+      transition: 0.1s;
+      &:hover{
+        margin-left: 10px;
+        margin-top: 11px;
+        transition: 0.1s;
+        background-color: #fff;
+      }
+    }
+    .shadow{
+      position: absolute;
+      transform: skewX(-10deg);
+      background-color: rgba(0,0,0, 0.2);
+      border: solid 1px #fff;
+      width: 480px;
+      height: 90px;
+      left: 2.8%;
+      top: 6.2%;
+      z-index: -1;
+    }
+  }
+
+
+  .rules{
+    z-index: 20;
+    margin-top: 30px;
+    color: #fff;
+    text-decoration: underline;
+    justify-content: center;
+    align-self: center;
+    font-family: "Neue Machina Regular", sans-serif;
+    font-size: 12pt;
+  }
+}
+
+
+.best-front{
+  z-index: 20;
+  grid-area: best-front;
+  display: grid;
+  justify-content: center;
+  .knight{
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 43%;
+  }
+  .front-text{
+    position: relative;
+    .change-color{
+      z-index: -1;
+      @include main-text;
+      -webkit-text-stroke: 1px #fff;
+      span {
+        margin-left: 13%;
+      }
+    }
+    .second{
+      position: absolute;
+      top: 0;
+      z-index: 3;
+      color: transparent;
+    }
+  }
+}
+
+
+
+.money-group{
+  z-index: 20;
+  grid-area: money;
+  display: flex;
+  align-self: end;
+  li:not(first-child){
+    margin-left: 30px;
+  }
+
+}
+.social-group{
+  z-index: 20;
+  grid-area: social;
+  display: flex;
+  justify-content: flex-end;
+  align-self: end;
+  li{
+    margin-left: 30px;
+  }
+
+}
+
+
+.bubbls {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+    .ball {
+      position: absolute;
+    border-radius: 50%;
+    background: url("../img/1.png") no-repeat center center;
+    background-size: cover;
+    filter: blur(8px);
+    animation: balls 40s linear infinite;
+
+    &:nth-child(1){
+      left: 70%;
+      width: 177px;
+      height: 177px;
+      animation-delay: 0s;
+    }
+      &:nth-child(2){
+        left: 90%;
+        width: 90px;
+        height: 90px;
+        animation-delay: 5s;
+        //animation-duration: 10s;
+      }
+      &:nth-child(3){
+        left: 30%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 15s;
+        //z-index: -1;
+      }
+      &:nth-child(4){
+        left: 60%;
+        width: 100px;
+        height: 100px;
+        animation-delay: 20s;
+        z-index: 10;
+      }
+      &:nth-child(5){
+        left: 30%;
+        width: 40px;
+        height: 40px;
+        animation-delay: 25s;
+      }
+      &:nth-child(6){
+        left: 10%;
+        width: 40px;
+        height: 40px;
+        animation-delay: 15s;
+      }
+      &:nth-child(7){
+        left: 25%;
+        width: 177px;
+        height: 177px;
+        animation-delay: 11s;
+      }
+  }
+}
+
+
+@keyframes balls{
+  0%{
+    transform: translateY(0);
+    //opacity: 1;
+  }
+  100%{
+    transform: translateY(-120vh);
+    //opacity: 0;
+  }
+
+}
+
+@keyframes like {
+  0%{
+    left: -100%;
+  }
+  100%{
+    left: 0%;
+  }
+}
+
+
+
+@media (max-width: 400px){
+  .wrapper{
+    height: auto;
+    overflow: auto;
+    .header-present{
+      display: none;
+    }
+    .header-title{
+      justify-content: center;
+    }
+    grid-template-columns: 1fr;
+    grid-template-areas: "title"
+                          "best-front"
+                          "bonus"
+                          "btn-group"
+                          "money"
+                          "social";
+
+    .best-front{
+      display: flex;
+      flex-direction: column;
+      width: 320px;
+      .knight{
+        width: auto;
+        height: 300px;
+        top: 30%;
+        left: 0;
+        &:after{
+          content: '';
+          @include gradient;
+          left: 0px;
+          bottom: 0px;
+          width: 100%;
+          height: 300px;
+          transform: rotate(180deg);
+        }
+      }
+      .front-text{
+        margin-top: 300px;
+      }
+      .best-front .front-text .change-color, .first, .second{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 24px;
+      }
+    }
+
+
+
+    .bonus, .btn-group{
+      display: none;
+    }
+
+  }
+
+}
+
+//"title  present"
+//"bonus bonus"
+//"btn-group best-front"
+//"money social";
