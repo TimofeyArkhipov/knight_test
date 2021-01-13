@@ -55,13 +55,15 @@ body {
             transform: rotate(180deg); }
 
 .wrapper {
-  overflow: hidden;
   max-width: 100%;
   height: 100%;
   margin: 32px 47px;
   display: grid;
   grid-template-columns: 40% 60%;
-  grid-template-areas: "title  present" "bonus bonus" "btn-group best-front" "money social"; }
+  grid-template-areas: "title  present"
+ "bonus bonus"
+ "btn-group best-front"
+ "money social"; }
 
 .header-title {
   grid-area: title;
@@ -503,7 +505,13 @@ body {
     margin: 0 10px;
     height: 100%;
     grid-template-columns: 100%;
-    grid-template-areas: "title" "best-front" "bonus" "btn-group" "present" "money" "social"; }
+    grid-template-areas: "title"
+ "best-front"
+ "bonus"
+ "btn-group"
+ "present"
+ "money"
+ "social"; }
     .wrapper:before {
       content: '';
       background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(21%, rgba(0, 0, 0, 0.79)), to(rgba(0, 0, 0, 0)));
