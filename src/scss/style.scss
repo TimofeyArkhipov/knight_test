@@ -24,49 +24,74 @@
   position: absolute;
 }
 
-
+html{
+  height: 100%;
+  overflow: hidden;
+}
 
 body{
-  height: 100vh;
+  height: 100%;
   box-sizing: border-box;
-  background: url("../img/bg_c.png") right bottom no-repeat fixed, url("../img/bg_.png")  center center no-repeat fixed;
-  background-size: auto, cover;
-  z-index: -2;
-  overflow-x: hidden;
-  &:before{
-  content: '';
-    @include gradient;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 300px;
-  }
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%), linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%),       url("../img/bg_c.png") right bottom no-repeat fixed, url("../img/bg_.png")  center center no-repeat fixed;
+
+  background-size: auto, auto, auto, cover;
+  overflow: hidden;
+  //position: relative;
+  //.top-gradient{
+  //  @include gradient;
+  //  display: inline-block;
+  //  position: absolute;
+  //  left: 0;
+  //  top: 0;
+  //  width: 100%;
+  //  height: 300px;
+  //}
+  //
+  //.bottom-gradient{
+  //  @include gradient;
+  //  display: inline-block;
+  //  position: absolute;
+  //  left: 0;
+  //  bottom: 0;
+  //  width: 100%;
+  //  height: 300px;
+  //  transform: rotate(180deg);
+  //}
+
+  //&:before{
+  //content: '';
+  //  @include gradient;
+  //  left: 0;
+  //  top: 0;
+  //  width: 100%;
+  //  height: 300px;
+  //}
+  //&:after{
+  //  content: '';
+  //  @include gradient;
+  //  left: 0;
+  //  bottom: 0;
+  //  width: 100%;
+  //  height: 300px;
+  //  transform: rotate(180deg);
+  //}
 }
 
 
 
 
 .wrapper{
-
   max-width: 100%;
-  //height: 100%;
   margin: 32px 47px;
-  overflow: hidden;
+
+  height: 100%;
   display: grid;
+  position: relative;
   grid-template-columns: 40% 60%;
   grid-template-areas: "title  present"
                         "bonus bonus"
                          "btn-group best-front"
                          "money social";
-  &:after{
-    content: '';
-    @include gradient;
-    left: 0px;
-    bottom: -55%;
-    width: 100%;
-    height: 300px;
-    transform: rotate(180deg);
-  }
 }
 
 .header-title{
@@ -167,10 +192,6 @@ body{
   }
 }
 
-.knight-opacity{
-  display: none;
-}
-
 
 .btn-group{
   position: relative;
@@ -185,7 +206,6 @@ body{
     width: 490px;
     height: 100px;
     .btn-tap{
-      //position: inherit;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -238,9 +258,9 @@ body{
   display: grid;
   justify-content: center;
   .knight{
-    z-index: 1;
+    z-index: 3;
     position: absolute;
-    bottom: 0;
+    bottom: -20%;
     left: 43%;
     width: 460px;
     height: 95%;
@@ -259,7 +279,7 @@ body{
     .second{
       position: absolute;
       top: 0;
-      z-index: 3;
+      z-index: 4;
       color: transparent;
     }
   }
@@ -294,15 +314,15 @@ body{
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 0;
-  z-index: 1;
+  bottom: -10%;
+  z-index: -1;
     .ball {
     position: absolute;
     border-radius: 50%;
     background: url("../img/1.png") no-repeat center center;
     background-size: cover;
     filter: blur(8px);
-    animation: balls 40s linear infinite;
+    animation: balls 20s linear infinite;
 
     &:nth-child(1){
       position: absolute;
@@ -366,7 +386,7 @@ body{
     //opacity: 1;
   }
   100%{
-    transform: translateY(-120vh);
+    transform: translateY(-1000px);
     //opacity: 0;
   }
 
@@ -453,16 +473,35 @@ body{
 
 
 @media (max-width: 414px){
+  html{
+    overflow: auto;
+  }
   body{
-    background: url("../img/Слой3.svg") right top no-repeat fixed, url("../img/bg_.png")  center center no-repeat fixed;
-    background-size: 70% 70%, 100% cover;
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%), linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%), url("../img/Слой3.png") right top no-repeat, url("../img/bg_.png")  center center no-repeat fixed;
+    background-size: auto, auto, 70% 70%, auto 100%;
+    overflow: visible;
     //background-position: ;
     //background: #4f2866;
+    .bottom-gradient{
+      width: 0%;
+    }
   }
+
+
   .wrapper{
-    margin: 0 10px;
+    margin: 0 10px 20px;
+    height: auto;
     min-height: 1032px;
-    //overflow: hidden;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 250px 25% 15% 15% 10% 5%;
+    grid-template-areas: "title"
+                          "best-front"
+                          "bonus"
+                          "btn-group"
+                          "present"
+                          "money"
+                          "social";
+
     .header-present{
       //margin: 40px 0;
       align-self: center;
@@ -475,49 +514,42 @@ body{
       align-items: center;
     }
 
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 38% 5% 15% 15% 10% 5%;
-    grid-template-areas: "title"
-                          "best-front"
-                          "bonus"
-                          "btn-group"
-                          "present"
-                          "money"
-                          "social";
 
     .best-front{
-      display: flex;
-      place-self: center;
-      flex-direction: column;
       position: relative;
-      width: 320px;
-      justify-content: center;
+      width: 100%;
+      display: flex;
       align-items: center;
+      margin-top: 30px;
       .knight{
         position:absolute;
         width: 240px;
         height: 400px;
-        bottom: -130%;
+        top: -10%;
         left: -7%;
-        background:  url("../img/man2.svg") center center no-repeat;
+        background:  url("../img/man2.png") center center no-repeat;
         background-size: cover;
         z-index: 2;
       }
 
-
       .front-text{
+        margin-top: 120px;
         display: flex;
         align-self: center;
         justify-content: center;
         align-items: center;
-        //margin-top: 150px;
         margin-left: 10px;
+        width: 100%;
+        flex-wrap: wrap;
       }
       .best-front .front-text .change-color, .first, .second{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        font-size: 28px;
+        font-size: 30px;
+        span{
+          text-align: end;
+        }
       }
     }
 
@@ -556,14 +588,14 @@ body{
 
 
     .bonus{
-      margin-top: 70px;
+      //margin-top: 120px;
       display: flex;
+      align-self: end;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      //margin-top: 120px;
       p{
-        font-size: 28px;
+        font-size: 34px;
       }
       p:nth-child(1){
         align-self: flex-start;
@@ -620,13 +652,22 @@ body{
       li:nth-child(1){
 
       }
+      margin-bottom: 20px;
     }
   }
 
   .bubbls{
-    top: 1023px;
+    //top: 1023px;
+    bottom: 50%;
+    .ball {
+      opacity: 0;
+      animation: balls 10s linear infinite;
+    }
     .ball:nth-child(1){
+      width: 25px;
+      height: 25px;
       left: 50%;
+      animation-delay: 0s;
     }
     .ball:nth-child(2){
       left: 10%;
@@ -641,7 +682,6 @@ body{
   }
 
   .circles, .circles2{
-
     width: 200px;
     height: 200px;
   }
@@ -661,6 +701,21 @@ body{
   }
 
 
+  @keyframes balls{
+    0%{
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50%{
+      transform: translateY(-400px);
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+
+  }
 
 
   @keyframes water {
