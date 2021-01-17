@@ -26,7 +26,7 @@
 
 html{
   height: 100%;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 body{
@@ -34,7 +34,6 @@ body{
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%), linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%),  url("../img/bg_.png")  center center no-repeat fixed;
   background-size: auto, auto, cover;
-  overflow: hidden;
   .castle{
     position: absolute;
     right: 0;
@@ -158,20 +157,6 @@ body{
         z-index: -1;
       }
     }
-
-    //.literal{
-    //    //&:before{
-    //    //  content: 'Л';
-    //    //  //background: url("../img/L.svg");
-    //    //  position: absolute;
-    //    //  color: rgba(0,0,0, 0.2);
-    //    //  -webkit-text-stroke: 1px #fff;
-    //    //  left: -36%;
-    //    //  width: 5px;
-    //    //  top: 0;
-    //    //  overflow: hidden;
-    //    //}
-    //}
 
   }
 }
@@ -562,8 +547,8 @@ body{
   body {
     background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
     background-size: auto, auto, auto 100%;
-    overflow: visible;
-    height: 90vh;
+    overflow-x: hidden;
+    height: auto;
 
     .bottom-gradient {
       width: 0%;
@@ -580,7 +565,7 @@ body{
       height: 100%;
       grid-template-columns: 100%;
       grid-auto-rows: 50px;
-      grid-template-rows: 10% 1fr 250px 1fr 25% 1fr 15% 1fr 10%  1fr 15% 1fr 5%;
+      grid-template-rows: 10% 1fr 250px 25% 15% 10%  15% 5%;
       grid-template-areas:
               "title"
               "best-front"
@@ -809,39 +794,7 @@ body{
     }
 
 
-    @keyframes balls {
-      0% {
-        transform: translateY(0);
-        opacity: 0;
-      }
-      50% {
-        transform: translateY(-400px);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-1000px);
-        opacity: 0;
-      }
 
-    }
-
-
-    @keyframes water {
-      0% {
-        height: 0px;
-        width: 0px;
-        opacity: 1;
-        box-shadow: 1px 1px 0 2px rgb(79, 40, 102),
-        inset 1px 1px 0 2px rgb(79, 40, 102);
-      }
-      100% {
-        height: 500px;
-        width: 500px;
-        opacity: 0;
-        box-shadow: 1px 1px 0 2px rgb(51, 51, 102),
-        inset 1px 1px 0 2px rgb(51, 51, 102);
-      }
-    }
   }
 
 
@@ -917,273 +870,45 @@ body{
    bottom: 100px;
     top:  80%;
   }
-}
 
 
 
-@media (max-width: 414px){
-  //html{
-  //  overflow: auto;
-  //}
-  //body{
-  //  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%), linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%), url("../img/Слой3.png") right top no-repeat, url("../img/bg_.png")  center center no-repeat fixed;
-  //  background-size: auto, auto, 70% 70%, auto 100%;
-  //  overflow: visible;
-  //  height: 90vh;
-  //  .bottom-gradient{
-  //    width: 0%;
-  //  }
-  //}
-  //
-  //.wrapper{
-  //  margin: 0 10px 20px;
-  //  //height: 90vh;
-  //  min-height: 1032px;
-  //  grid-template-columns: 100%;
-  //  grid-template-rows: 10% 250px 25% 15% 15% 10% 5%;
-  //  grid-template-areas: "title"
-  //                        "best-front"
-  //                        "bonus"
-  //                        "btn-group"
-  //                        "present"
-  //                        "money"
-  //                        "social";
-  //
-  //  .header-present{
-  //    justify-content: center;
-  //  }
-  //  .header-title{
-  //    width: 100%;
-  //    //margin-top: 40px;
-  //    display: flex;
-  //    justify-content: center;
-  //    align-items: center;
-  //  }
-  //
-  //
-  //  .best-front{
-  //    position: relative;
-  //    width: 100%;
-  //    display: flex;
-  //    align-items: center;
-  //    margin-top: 30px;
-  //    z-index: 1;
-  //    .knight{
-  //      position:absolute;
-  //      width: 240px;
-  //      height: 400px;
-  //      top: -10%;
-  //      left: -7%;
-  //      z-index: 2;
-  //    }
-  //
-  //    .front-text{
-  //      margin-top: 120px;
-  //      display: flex;
-  //      align-self: center;
-  //      justify-content: center;
-  //      align-items: center;
-  //      margin-left: 10px;
-  //      width: 100%;
-  //      flex-wrap: wrap;
-  //    }
-  //    .best-front .front-text .change-color, .first, .second{
-  //      width: 100%;
-  //      display: flex;
-  //      flex-wrap: wrap;
-  //      font-size: 30px;
-  //      span{
-  //        text-align: end;
-  //      }
-  //    }
-  //  }
-  //
-  //
-  //  .btn-group{
-  //    display: flex;
-  //    flex-direction: column;
-  //    align-items: center;
-  //    .tap{
-  //      width: 100%;
-  //      display: flex;
-  //      justify-content: center;
-  //      .btn-tap{
-  //        width: 100%;
-  //        height: 56px;
-  //        font-size: 15.36pt;
-  //        &:hover{
-  //          margin-left: 2px;
-  //          margin-top: 13.5px;
-  //        }
-  //      }
-  //      .shadow{
-  //        align-self: center;
-  //        margin: 0;
-  //        width: 100%;
-  //        height: 56px;
-  //        left: 0;
-  //        top: 10%;
-  //      }
-  //
-  //    }
-  //    .rules{
-  //      margin-top: 0;
-  //    }
-  //  }
-  //
-  //
-  //  .bonus{
-  //    //margin-top: 120px;
-  //    display: flex;
-  //    align-self: end;
-  //    justify-content: center;
-  //    align-items: center;
-  //    flex-direction: column;
-  //    z-index: 4;
-  //    p{
-  //      font-size: 34px;
-  //    }
-  //    p:nth-child(1){
-  //      align-self: flex-start;
-  //    }
-  //    .mobile-position{
-  //      text-align: end;
-  //    }
-  //
-  //    .like{
-  //      width: 280px;
-  //      font-size: 30pt;
-  //      margin-left: 90px;
-  //      &:after{
-  //        font-size: 29pt;
-  //        left: -2%;
-  //      }
-  //      &:before{
-  //        height: 31px;
-  //        width: 47px;
-  //        left: -20%;
-  //      }
-  //    }
-  //
-  //  }
-  //
-  //  .money-group{
-  //    position: relative;
-  //    justify-self: center;
-  //    display: flex;
-  //    flex-wrap: wrap;
-  //    width: 100%;
-  //    align-items: center;
-  //    flex-direction: row;
-  //    justify-content: center;
-  //    padding: 15px;
-  //    margin: 0 20px;
-  //    border-top: 1px solid #fff;
-  //    border-bottom: 1px solid #fff ;
-  //    li{
-  //      margin-top: 20px;
-  //    }
-  //    li:nth-child(1){
-  //      margin-left: 0;
-  //    }
-  //  }
-  //  .social-group{
-  //    margin-top: 20px;
-  //    position: relative;
-  //    justify-self: center;
-  //    display: flex;
-  //    flex-wrap: wrap;
-  //    width: 280px;
-  //    justify-content: center;
-  //    li:nth-child(1){
-  //
-  //    }
-  //    margin-bottom: 20px;
-  //  }
-  //}
-  //
-  //.bubbls{
-  //  //top: 1023px;
-  //  bottom: 50%;
-  //  .ball {
-  //    opacity: 0;
-  //    animation: balls 10s linear infinite;
-  //  }
-  //  .ball:nth-child(1){
-  //    width: 25px;
-  //    height: 25px;
-  //    left: 50%;
-  //    animation-delay: 0s;
-  //  }
-  //  .ball:nth-child(2){
-  //    left: 10%;
-  //  }
-  //  .ball:nth-child(3){
-  //    left: 60%;
-  //  }
-  // .ball:nth-child(n+4):nth-child(-n+7){
-  //    display: none;
-  //  }
-  //
-  //}
-  //
-  //.circles, .circles2{
-  //  width: 200px;
-  //  height: 200px;
-  //}
-  //
-  //
-  //.circles{
-  //  left: -10%;
-  //  top:47%;
-  //}
-  //
-  //.circles2{
-  //  display: flex;
-  //  width: 200px;
-  //  height: 200px;
-  //  left: -30%;
-  //  top: 100%;
-  //}
-  //
-  //
-  //@keyframes balls{
-  //  0%{
-  //    transform: translateY(0);
-  //    opacity: 0;
-  //  }
-  //  50%{
-  //    transform: translateY(-400px);
-  //    opacity: 1;
-  //  }
-  //  100%{
-  //    transform: translateY(-1000px);
-  //    opacity: 0;
-  //  }
-  //
-  //}
-  //
-  //
-  //@keyframes water {
-  //  0%{
-  //    height: 0px;
-  //    width: 0px;
-  //    opacity: 1;
-  //    box-shadow: 1px 1px 0  2px rgb(79, 40, 102),
-  //    inset 1px 1px 0  2px rgb(79, 40,102);
-  //  }
-  //  100%{
-  //    height: 500px;
-  //    width: 500px;
-  //    opacity: 0;
-  //    box-shadow: 1px  1px 0 2px rgb(51,51,102),
-  //    inset 1px  1px 0 2px rgb(51,51,102);
-  //  }
-  //}
+  @keyframes balls {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-400px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+
+  }
 
 
+  @keyframes water {
+    0% {
+      height: 0px;
+      width: 0px;
+      opacity: 1;
+      box-shadow: 1px 1px 0 2px rgb(79, 40, 102),
+      inset 1px 1px 0 2px rgb(79, 40, 102);
+    }
+    100% {
+      height: 500px;
+      width: 500px;
+      opacity: 0;
+      box-shadow: 1px 1px 0 2px rgb(51, 51, 102),
+      inset 1px 1px 0 2px rgb(51, 51, 102);
+    }
+  }
 
 }
+
 
 
 

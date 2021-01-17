@@ -24,8 +24,7 @@
     text-decoration: none; }
 
 html {
-  height: 100%;
-  overflow: hidden; }
+  height: 100%; }
 
 body {
   height: 100%;
@@ -34,8 +33,7 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), url("../img/bg_.png") center center no-repeat fixed;
   background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
   background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
-  background-size: auto, auto, cover;
-  overflow: hidden; }
+  background-size: auto, auto, cover; }
   body .castle {
     position: absolute;
     right: 0;
@@ -568,8 +566,8 @@ body {
     background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
     background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
     background-size: auto, auto, auto 100%;
-    overflow: visible;
-    height: 90vh; }
+    overflow-x: hidden;
+    height: auto; }
     body .bottom-gradient {
       width: 0%; }
     body .castle {
@@ -580,7 +578,7 @@ body {
       height: 100%;
       grid-template-columns: 100%;
       grid-auto-rows: 50px;
-      grid-template-rows: 10% 1fr 250px 1fr 25% 1fr 15% 1fr 10%  1fr 15% 1fr 5%;
+      grid-template-rows: 10% 1fr 250px 25% 15% 10%  15% 5%;
       grid-template-areas: "title" "best-front" "bonus" "btn-group" "present" "money" "social"; }
       body .wrapper .header-present {
         -webkit-box-pack: center;
@@ -830,59 +828,7 @@ body {
       width: 200px;
       height: 200px;
       left: -30%;
-      top: 50%; }
-  @-webkit-keyframes balls {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 0; }
-    50% {
-      -webkit-transform: translateY(-400px);
-              transform: translateY(-400px);
-      opacity: 1; }
-    100% {
-      -webkit-transform: translateY(-1000px);
-              transform: translateY(-1000px);
-      opacity: 0; } }
-  @keyframes balls {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 0; }
-    50% {
-      -webkit-transform: translateY(-400px);
-              transform: translateY(-400px);
-      opacity: 1; }
-    100% {
-      -webkit-transform: translateY(-1000px);
-              transform: translateY(-1000px);
-      opacity: 0; } }
-  @-webkit-keyframes water {
-    0% {
-      height: 0px;
-      width: 0px;
-      opacity: 1;
-      -webkit-box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866;
-              box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866; }
-    100% {
-      height: 500px;
-      width: 500px;
-      opacity: 0;
-      -webkit-box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366;
-              box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366; } }
-  @keyframes water {
-    0% {
-      height: 0px;
-      width: 0px;
-      opacity: 1;
-      -webkit-box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866;
-              box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866; }
-    100% {
-      height: 500px;
-      width: 500px;
-      opacity: 0;
-      -webkit-box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366;
-              box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366; } } }
+      top: 50%; } }
 
 @media (max-width: 590px) {
   .best-front {
@@ -942,6 +888,58 @@ body {
     top: 300px; }
   body .circles2 {
     bottom: 100px;
-    top: 80%; } }
+    top: 80%; }
+  @-webkit-keyframes balls {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 0; }
+    50% {
+      -webkit-transform: translateY(-400px);
+              transform: translateY(-400px);
+      opacity: 1; }
+    100% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0; } }
+  @keyframes balls {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 0; }
+    50% {
+      -webkit-transform: translateY(-400px);
+              transform: translateY(-400px);
+      opacity: 1; }
+    100% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0; } }
+  @-webkit-keyframes water {
+    0% {
+      height: 0px;
+      width: 0px;
+      opacity: 1;
+      -webkit-box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866;
+              box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866; }
+    100% {
+      height: 500px;
+      width: 500px;
+      opacity: 0;
+      -webkit-box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366;
+              box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366; } }
+  @keyframes water {
+    0% {
+      height: 0px;
+      width: 0px;
+      opacity: 1;
+      -webkit-box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866;
+              box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866; }
+    100% {
+      height: 500px;
+      width: 500px;
+      opacity: 0;
+      -webkit-box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366;
+              box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366; } } }
 
 /*# sourceMappingURL=style.css.map */
