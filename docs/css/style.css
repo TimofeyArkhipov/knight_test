@@ -115,8 +115,7 @@ body {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column;
-  align-self: end; }
+          flex-direction: column; }
   .bonus > p {
     font-family: "Druk Cyr Heavy Italic", sans-serif;
     font-style: italic;
@@ -189,7 +188,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  align-self: end;
+  align-self: start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -303,7 +302,14 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  align-self: end; }
+  -webkit-align-content: space-around;
+      -ms-flex-line-pack: distribute;
+          align-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: start;
+      -ms-flex-align: start;
+          align-items: start;
+  align-self: center; }
   .money-group li {
     margin: 20px 20px 20px 40px; }
   .money-group li:nth-child(1) {
@@ -320,7 +326,11 @@ body {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  align-self: end; }
+  -webkit-box-align: start;
+  -webkit-align-items: start;
+      -ms-flex-align: start;
+          align-items: start;
+  align-self: center; }
   .social-group li {
     margin-left: 30px; }
   .social-group li:nth-child(1) .sign18 {
@@ -577,7 +587,11 @@ body {
 
 @media screen and (max-width: 850px) {
   html {
-    overflow: hidden; }
+    overflow: hidden;
+    height: -webkit-calc(100% + 60px);
+    height: calc(100% + 60px);
+    min-height: -webkit-calc(100% + 60px);
+    min-height: calc(100% + 60px); }
   body {
     background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), url("../img/bg_mobile.png") no-repeat center/cover fixed;
     background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat center/cover fixed;
