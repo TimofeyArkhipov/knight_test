@@ -576,9 +576,9 @@ body {
   html {
     overflow: hidden; }
   body {
-    background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), url("../img/bg_mobile.png") no-repeat fixed;
-    background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat fixed;
-    background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat fixed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), url("../img/bg_mobile.png") no-repeat center/cover fixed;
+    background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat center/cover fixed;
+    background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat center/cover fixed;
     background-size: auto, auto, cover;
     height: 100%;
     overflow-x: hidden; }
@@ -794,7 +794,7 @@ body {
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff; }
         body .wrapper .money-group li {
-          margin: 10px; }
+          margin: 10px 15px; }
         body .wrapper .money-group li:nth-child(1) {
           margin-left: 0; }
       body .wrapper .social-group {
