@@ -8,7 +8,6 @@ if (width > 850) {
         let x = (window.innerWidth - e.pageX*speed)/100;
         elem.style.transform = `translateX(${x}px)`;
         console.log(speed);
-
     });
 }
 

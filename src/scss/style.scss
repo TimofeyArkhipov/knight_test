@@ -26,6 +26,7 @@
 
 html{
   height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -33,6 +34,7 @@ body{
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%), linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%, rgba(0,212,255,0) 50%),  url("../img/bg_.png")  center center no-repeat fixed;
   background-size: auto, auto, cover;
+
   .castle{
     position: absolute;
     right: 0;
@@ -42,26 +44,25 @@ body{
 }
 
 
-
-
 .wrapper{
   max-width: 100%;
-  margin: 32px 47px;
-
-  height: 90vh;
+  margin: 50px 47px;
+  height: 100vh;
   display: grid;
   //position: relative;
+  grid-template-rows: auto;
   grid-template-columns: 40% 60%;
   grid-template-areas: "title  present"
                         "bonus bonus"
-                         "btn-group best-front"
-                         "money social";
+                        "btn-group best-front"
+                        "money social";
 }
 
 .header-title{
  grid-area: title;
   z-index: 30;
 }
+
 
 .header-present{
   z-index: 20;
@@ -257,8 +258,12 @@ body{
   grid-area: money;
   display: flex;
   align-self: end;
-  li:not(first-child){
-    margin-left: 30px;
+  min-height: 100px;
+  li{
+    margin-left: 40px;
+  }
+  li:nth-child(1){
+    margin-left: 0;
   }
 
 }
@@ -268,6 +273,7 @@ body{
   display: flex;
   justify-content: flex-end;
   align-self: end;
+  min-height: 100px;
   li{
     margin-left: 30px;
   }
@@ -287,7 +293,7 @@ body{
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -10%;
+  bottom: 0%;
   z-index: -1;
     .ball {
     position: absolute;
@@ -561,8 +567,8 @@ body{
     overflow: hidden;
   }
   body {
-    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
-    background-size: auto, auto, auto 100%;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat fixed;
+    background-size: auto, auto, cover;
     //height: 1023px;
     height: 100%;
     overflow-x: hidden;
@@ -574,7 +580,7 @@ body{
 
     .wrapper {
       margin: 10px 20px;
-      height: 100%;
+      //height: 100%;
       grid-template-columns: 100%;
       grid-auto-rows: 50px;
       grid-template-rows: 10% 1fr 250px 1fr 25% 15% 10% 10% 5%;
@@ -736,16 +742,15 @@ body{
         flex-direction: row;
         justify-content: center;
         margin: 0 20px;
-        padding: 0 20px;
+        padding: 0 70px;
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff;
+
         li{
           margin: 10px;
         }
         li:nth-child(1) {
           margin-left: 0;
-
-
         }
 
       }
@@ -758,8 +763,12 @@ body{
         justify-self: center;
         align-items: center;
         height: 50px;
+        li{
+          margin-top: 10px;
+        }
         li:nth-child(1){
           margin: 0;
+          margin-top: 10px;
           .sign18{
             display: none;
           }
@@ -799,22 +808,6 @@ body{
       width: 200px;
       height: 200px;
     }
-
-
-    //.circles {
-    //  left: -10%;
-    //  top: 47%;
-    //}
-    //
-    //.circles2 {
-    //  display: flex;
-    //  width: 200px;
-    //  height: 200px;
-    //  left: -30%;
-    //  top: 50%;
-    //}
-
-
 
   }
 
@@ -883,6 +876,7 @@ body{
   }
 
   .wrapper{
+
     margin: 0 20px;
     .bonus {
       width: 100%;

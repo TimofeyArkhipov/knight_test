@@ -25,6 +25,7 @@
 
 html {
   height: 100%;
+  width: 100%;
   overflow: hidden; }
 
 body {
@@ -575,10 +576,10 @@ body {
   html {
     overflow: hidden; }
   body {
-    background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), url("../img/bg_.png") center center no-repeat fixed;
-    background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
-    background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
-    background-size: auto, auto, auto 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), url("../img/bg_mobile.png") no-repeat fixed;
+    background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat fixed;
+    background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat fixed;
+    background-size: auto, auto, cover;
     height: 100%;
     overflow-x: hidden; }
     body .castle {

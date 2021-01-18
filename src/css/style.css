@@ -25,6 +25,7 @@
 
 html {
   height: 100%;
+  width: 100%;
   overflow: hidden; }
 
 body {
@@ -42,9 +43,10 @@ body {
 
 .wrapper {
   max-width: 100%;
-  margin: 32px 47px;
-  height: 90vh;
+  margin: 50px 47px;
+  height: 100vh;
   display: grid;
+  grid-template-rows: auto;
   grid-template-columns: 40% 60%;
   grid-template-areas: "title  present" "bonus bonus" "btn-group best-front" "money social"; }
 
@@ -296,9 +298,12 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  align-self: end; }
-  .money-group li:not(first-child) {
-    margin-left: 30px; }
+  align-self: end;
+  min-height: 100px; }
+  .money-group li {
+    margin-left: 40px; }
+  .money-group li:nth-child(1) {
+    margin-left: 0; }
 
 .social-group {
   z-index: 20;
@@ -311,7 +316,8 @@ body {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  align-self: end; }
+  align-self: end;
+  min-height: 100px; }
   .social-group li {
     margin-left: 30px; }
   .social-group li:nth-child(1) .sign18 {
@@ -323,7 +329,7 @@ body {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -10%;
+  bottom: 0%;
   z-index: -1; }
   .bubbls .ball {
     position: absolute;
@@ -570,10 +576,10 @@ body {
   html {
     overflow: hidden; }
   body {
-    background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), url("../img/bg_.png") center center no-repeat fixed;
-    background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
-    background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_.png") center center no-repeat fixed;
-    background-size: auto, auto, auto 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 212, 255, 0))), url("../img/bg_mobile.png") no-repeat fixed;
+    background: -o-linear-gradient(top, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), -o-linear-gradient(bottom, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat fixed;
+    background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, #020024 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat fixed;
+    background-size: auto, auto, cover;
     height: 100%;
     overflow-x: hidden; }
     body .castle {
@@ -581,7 +587,6 @@ body {
       right: 0; }
     body .wrapper {
       margin: 10px 20px;
-      height: 100%;
       grid-template-columns: 100%;
       grid-auto-rows: 50px;
       grid-template-rows: 10% 1fr 250px 1fr 25% 15% 10% 10% 5%;
@@ -785,7 +790,7 @@ body {
             -ms-flex-pack: center;
                 justify-content: center;
         margin: 0 20px;
-        padding: 0 20px;
+        padding: 0 70px;
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff; }
         body .wrapper .money-group li {
@@ -811,8 +816,11 @@ body {
             -ms-flex-align: center;
                 align-items: center;
         height: 50px; }
+        body .wrapper .social-group li {
+          margin-top: 10px; }
         body .wrapper .social-group li:nth-child(1) {
-          margin: 0; }
+          margin: 0;
+          margin-top: 10px; }
           body .wrapper .social-group li:nth-child(1) .sign18 {
             display: none; }
           body .wrapper .social-group li:nth-child(1) .media-sign18 {
