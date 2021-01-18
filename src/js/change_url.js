@@ -21,6 +21,8 @@ window.addEventListener('resize', function () {
     if (screen.width>850) {
         knight.src='img/man.png';
         castle.src='img/bg_c.png';
+        castle.width='752';
+        castle.height='670';
     }
 });
 

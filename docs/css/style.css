@@ -50,7 +50,7 @@ body {
 
 .header-title {
   grid-area: title;
-  z-index: 20; }
+  z-index: 30; }
 
 .header-present {
   z-index: 20;
@@ -529,6 +529,10 @@ body {
       height: 90px;
       color: #000;
       font-size: 20pt; }
+      .btn-group .tap .btn-tap:hover {
+        margin-left: 11px;
+        margin-top: 11px;
+        cursor: pointer; }
     .btn-group .tap .shadow {
       max-width: 100%;
       height: 90px;
@@ -580,15 +584,14 @@ body {
       height: 100%;
       grid-template-columns: 100%;
       grid-auto-rows: 50px;
-      grid-template-rows: 10% 1fr 250px 1fr 25% 15% 10%  15% 1fr 5%;
+      grid-template-rows: 10% 1fr 250px 1fr 25% 15% 10% 10% 5%;
       grid-template-areas: "title" "best-front" "bonus" "btn-group" "present" "money" "social"; }
       body .wrapper .header-present {
-        margin-top: 55px;
+        margin: 50px 0px 50px 50px;
         -webkit-box-pack: center;
         -webkit-justify-content: center;
             -ms-flex-pack: center;
                 justify-content: center;
-        margin-left: 50px;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
@@ -597,8 +600,7 @@ body {
         -webkit-box-align: center;
         -webkit-align-items: center;
             -ms-flex-align: center;
-                align-items: center;
-        padding-bottom: 40px; }
+                align-items: center; }
       body .wrapper .header-title {
         width: 100%;
         display: -webkit-box;
@@ -631,7 +633,7 @@ body {
           width: 340px;
           height: auto;
           top: -10%;
-          left: -7%;
+          left: -15%;
           z-index: 2; }
         body .wrapper .best-front .front-text {
           max-width: 500px;
@@ -692,8 +694,8 @@ body {
             height: 56px;
             font-size: 15.36pt; }
             body .wrapper .btn-group .tap .btn-tap:hover {
-              margin-left: 2px;
-              margin-top: 13.5px;
+              margin-left: 0px;
+              margin-top: 12px;
               cursor: pointer; }
           body .wrapper .btn-group .tap .shadow {
             -webkit-align-self: center;
@@ -839,38 +841,28 @@ body {
     body .circles, body .circles2 {
       width: 200px;
       height: 200px; }
-    body .circles {
-      left: -10%;
-      top: 47%; }
-    body .circles2 {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      width: 200px;
-      height: 200px;
-      left: -30%;
-      top: 50%; }
   @-webkit-keyframes balls {
     0% {
-      -webkit-transform: translateY(500px);
-              transform: translateY(500px);
+      -webkit-transform: translateY(800px);
+              transform: translateY(800px);
       opacity: 0; }
-    50% {
+    20% {
       opacity: 1; }
     100% {
-      -webkit-transform: translateY(-800px);
-              transform: translateY(-800px); } }
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+      opacity: 1; } }
   @keyframes balls {
     0% {
-      -webkit-transform: translateY(500px);
-              transform: translateY(500px);
+      -webkit-transform: translateY(800px);
+              transform: translateY(800px);
       opacity: 0; }
-    50% {
+    20% {
       opacity: 1; }
     100% {
-      -webkit-transform: translateY(-800px);
-              transform: translateY(-800px); } }
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+      opacity: 1; } }
   @-webkit-keyframes water {
     0% {
       height: 0px;
@@ -899,11 +891,13 @@ body {
               box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366; } } }
 
 @media (max-width: 590px) {
+  body {
+    position: relative; }
   .best-front {
     margin-left: 0; }
   body .wrapper .best-front .knight {
     width: 230px;
-    left: -15px; }
+    left: -50px; }
   body .wrapper .best-front .second, .first {
     margin-left: 0;
     display: -webkit-box;
@@ -951,12 +945,42 @@ body {
     -webkit-align-items: start;
         -ms-flex-align: start;
             align-items: start; }
-    .money-group li {
-      height: 30px; }
   body .circles {
-    top: 300px; }
-  body .circles2 {
-    bottom: 100px;
-    top: 80%; } }
+    top: 45%;
+    left: -15%; }
+  .header-present {
+    position: relative; }
+    .header-present .circles2 {
+      left: -80%;
+      top: -80%; }
+      .header-present .circles2 .circle-elem {
+        max-width: 300px;
+        max-height: 300px; }
+  @-webkit-keyframes water {
+    0% {
+      height: 0px;
+      width: 0px;
+      opacity: 1;
+      -webkit-box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866;
+              box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866; }
+    100% {
+      height: 300px;
+      width: 300px;
+      opacity: 0;
+      -webkit-box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366;
+              box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366; } }
+  @keyframes water {
+    0% {
+      height: 0px;
+      width: 0px;
+      opacity: 1;
+      -webkit-box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866;
+              box-shadow: 1px 1px 0 2px #4f2866, inset 1px 1px 0 2px #4f2866; }
+    100% {
+      height: 300px;
+      width: 300px;
+      opacity: 0;
+      -webkit-box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366;
+              box-shadow: 1px 1px 0 2px #333366, inset 1px 1px 0 2px #333366; } } }
 
 /*# sourceMappingURL=style.css.map */
