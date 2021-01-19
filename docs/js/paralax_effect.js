@@ -1,1 +1,1 @@
-"use strict";let elem=document.querySelector(".knight"),width=window.innerWidth;width>850&&document.addEventListener("mousemove",e=>{let t=elem.getAttribute("data"),n=(window.innerWidth-e.pageX*t)/100;elem.style.transform=`translateX(${n}px)`,console.log(t)});
+"use strict";let elem=document.querySelector(".knight"),width=screen.width;document.addEventListener("mousemove",e=>{if(width>850){let t=elem.getAttribute("data"),l=(window.innerWidth-e.pageX*t)/100;elem.style.transform=`translateX(${l}px)`,console.log(t)}else elem.style.transform="translateX(0px)"});
