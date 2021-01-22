@@ -8,6 +8,7 @@
     text-decoration: none;
   }
 }
+html, body{width:100%; height:100%; margin:0}
 
 @mixin main-text{
   font-family: "Druk Cyr Heavy Italic", sans-serif;
@@ -50,8 +51,9 @@ body{
   height: 100vh;
   display: grid;
   //position: relative;
-  grid-template-rows: auto;
+  grid-template-rows: 10% 50% 20%;
   grid-template-columns: 40% 60%;
+  //grid-template-rows: 10% auto auto 20%;
   grid-template-areas: "title  present"
                         "bonus bonus"
                         "btn-group best-front"
@@ -71,6 +73,9 @@ body{
   //justify-content: end;
   align-items: flex-end;
   flex-direction: column;
+  .blow-effect{
+    position: relative;
+  }
   h3{
     width: 250px;
      height: 40px;
@@ -94,7 +99,7 @@ body{
   }
 }
 
-.header-present p:before{
+.header-present .blow-effect p:before{
   content: '';
   width: 50px;
   height: 62px;
@@ -104,12 +109,116 @@ body{
   bottom: 0;
 }
 
+
+.header-present .blow-effect:hover{
+  $particles: 50;
+  $width: 500;
+  $height: 500;
+
+  .pyro{
+    position: absolute;
+    left: -20px;
+  }
+
+  p:before{
+    animation: price-blow 3s linear infinite;
+  }
+
+  @keyframes price-blow {
+    0%, 10%, 20%, 30%, 40%, 50%, 60%{
+      transform: translateY(-2px);
+    }
+
+    5%, 15%, 25%, 35%, 45%, 55%{
+      transform: translateY(+2px);
+    }
+
+    60%{
+     transform: translateY(+30px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
+  }
+
+
+  $box-shadow: ();
+  $box-shadow2: ();
+  @for $i from 0 through $particles {
+    $box-shadow: $box-shadow,
+    random($width)-$width / 2 + px
+    random($height)-$height / 2 + px
+    hsl(random(360), 100, 50);
+    $box-shadow2: $box-shadow2, 0 0 #fff
+  }
+
+  @mixin keyframes ($animationName) {
+    @keyframes #{$animationName} {
+      @content;
+    }
+  }
+
+  @mixin animation-delay ($settings) {
+    animation-delay: $settings;
+  }
+
+  @mixin animation-duration ($settings) {
+    animation-duration: $settings;
+  }
+
+  @mixin animation ($settings) {
+    animation: $settings;
+  }
+
+  @mixin transform ($settings) {
+    transform: $settings;
+  }
+
+
+  .pyro:after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: $box-shadow2;
+    @include animation((3s bang ease-out infinite , 3.1s gravity ease-in infinite backwards));
+    animation-delay: 1.5s;
+  }
+
+
+  @include keyframes(bang) {
+    90%, 100%{
+      box-shadow:$box-shadow;
+    }
+
+  }
+
+  @include keyframes(gravity)  {
+    2%{
+      opacity: 0;
+    }
+    2%{
+      opacity: 1;
+    }
+    95%{
+      @include transform(translateY(250px));
+      opacity: 0;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+}
+
+
+
 .bonus{
   z-index: 30;
   grid-area: bonus;
   display: flex;
   flex-direction: column;
-  align-self: end;
+  //align-self: end;
   >p{
     @include main-text;
     max-width: 412px;
@@ -166,7 +275,7 @@ body{
   position: relative;
   grid-area: btn-group;
   display: flex;
-  align-self: end;
+  align-self: start;
   flex-direction: column;
   align-items: center;
   max-width: 500px;
@@ -257,10 +366,12 @@ body{
   z-index: 20;
   grid-area: money;
   display: flex;
-  align-self: end;
-  min-height: 100px;
+  align-content: space-around;
+  align-items: start;
+  align-self: center;
   li{
-    margin-left: 40px;
+    margin: 20px 20px 20px 40px;
+    //margin-left: 40px;
   }
   li:nth-child(1){
     margin-left: 0;
@@ -272,8 +383,8 @@ body{
   grid-area: social;
   display: flex;
   justify-content: flex-end;
-  align-self: end;
-  min-height: 100px;
+  align-items: start;
+  align-self: center;
   li{
     margin-left: 30px;
   }
@@ -448,7 +559,7 @@ body{
 }
 
 
-@media (max-width: 1488px){
+@media screen and (max-width: 1488px){
   .wrapper{
     .bonus{
       max-width: 500px;
@@ -476,7 +587,7 @@ body{
   }
 }
 
-@media (max-width: 1356px){
+@media screen and (max-width: 1356px){
   .best-front{
     margin-left: 50px;
     .front-text{
@@ -514,7 +625,7 @@ body{
 }
 
 
-@media (max-width: 1272px){
+@media screen and (max-width: 1272px){
   .best-front .knight{
     height: 80%;
     width: auto;
@@ -548,7 +659,7 @@ body{
 
 }
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
 .btn-group .tap{
     width: 230px;
     .btn-tap{
@@ -562,17 +673,21 @@ body{
 
 
 
-@media (max-width: 850px) {
+@media screen and (max-width: 850px) {
   html {
     overflow: hidden;
+    //height: calc(100% + 60px);
+    //min-height: calc(100% + 60px);
   }
+
+
+
   body {
-    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat fixed;
-    background-size: auto, auto, cover;
-    //height: 1023px;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 212, 255, 0) 50%), url("../img/bg_mobile.png") no-repeat center/cover fixed;
+    background-size: auto, auto, 100%;
     height: 100%;
     overflow-x: hidden;
-    //overflow-y: hidden;
+    -webkit-backface-visibility: hidden;
     .castle {
       top: 10%;
       right: 0;
@@ -745,13 +860,13 @@ body{
         padding: 0 70px;
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff;
-
-        li{
-          margin: 10px;
-        }
         li:nth-child(1) {
           margin-left: 0;
         }
+        li{
+          margin: 20px;
+        }
+
 
       }
 
@@ -762,9 +877,11 @@ body{
         justify-content: center;
         justify-self: center;
         align-items: center;
-        height: 50px;
+        height: auto;
+        padding: 20px 0;
         li{
           margin-top: 10px;
+          padding-top: 20px;
         }
         li:nth-child(1){
           margin: 0;
@@ -837,8 +954,8 @@ body{
       inset 1px 1px 0 2px rgb(79, 40, 102);
     }
     100% {
-      height: 500px;
-      width: 500px;
+      height: 200px;
+      width: 200px;
       opacity: 0;
       box-shadow: 1px 1px 0 2px rgb(51, 51, 102),
       inset 1px 1px 0 2px rgb(51, 51, 102);
@@ -847,7 +964,7 @@ body{
 }
 
 
-@media (max-width: 590px){
+@media screen and (max-width: 590px){
   body{
     position: relative;
   }
@@ -876,7 +993,6 @@ body{
   }
 
   .wrapper{
-
     margin: 0 20px;
     .bonus {
       width: 100%;
@@ -910,9 +1026,6 @@ body{
 
   .money-group{
     align-items: start;
-    li{
-     //height: 30px;
-    }
   }
   body .circles{
     top: 45%;
